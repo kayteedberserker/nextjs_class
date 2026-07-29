@@ -22,6 +22,7 @@ type Book {
     content: String!
     category: String!
     author:String
+    blogcover:String
   }
 
   
@@ -37,13 +38,19 @@ type Book {
     content: String!
     category: String!
     author:String!
+    blogcover:String
    }
 
+
+  type totalBlog {
+    allblog: [Blog!]!
+    totalNum: Int!
+  }
 
   type Query {
    book:[Book!]
    onebook(id:ID!):Book
-   getallblog(id:ID!,page:Int!,limit:Int!):[Blog]
+   getallblog(id: ID!, page: Int!, limit: Int!): totalBlog!
   }
    
    type Mutation{

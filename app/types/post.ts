@@ -16,4 +16,5 @@ export type Blog = {
   content: string
   category: string
   author:string
+  blogcover:string
 }

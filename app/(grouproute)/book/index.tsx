@@ -1,9 +1,8 @@
 "use client"
 
-import React from 'react'
+import type { Book } from '@/app/sharedui/lib/data'
 import { useQuery } from '@apollo/client/react'
 import gql from 'graphql-tag'
-import type { Book } from '@/app/sharedui/lib/data'
 export const GET_BOOKS = gql`
 query getbook {
   book{
@@ -15,7 +14,7 @@ query getbook {
 `
 
 const GetBooks =  () => {
-    const {data, loading} =  useQuery<Book>(GET_BOOKS)
+    const {data, loading} =  useQuery<{book: Book[]}>(GET_BOOKS)
     console.log(data);
     if (loading) {
         return <h1>Loading...</h1>
