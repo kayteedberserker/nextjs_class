@@ -1,11 +1,11 @@
 
 "use client"
-import { useForm } from 'react-hook-form'
 import type { Login } from '@/app/types/post'
-import { useMutation } from '@apollo/client/react'
 import type { TypedDocumentNode } from '@apollo/client'
+import { useMutation } from '@apollo/client/react'
 import gql from 'graphql-tag'
 import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
 
 type Loginresult = {
   loginuser: {
@@ -46,7 +46,7 @@ const LoginForm = () => {
              localStorage.setItem("existuser", JSON.stringify(data.loginuser.existuser))
            }
 
-           const response = await fetch("http://localhost:3000/api/setcookies", {
+           const response = await fetch("/api/setcookies", {
             method: "POST",
             body: JSON.stringify({ token:data?.loginuser?.token}),
            })
