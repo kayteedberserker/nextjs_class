@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import type { NextRequest } from "next/server";
 
-const protectedRoutes = ["/blog" ,"/book", , "/posts"];
+const protectedRoutes = ["/blog" ,"/book", "/posts"];
 
 
 export default function proxy(req: NextRequest) {
