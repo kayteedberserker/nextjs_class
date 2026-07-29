@@ -32,7 +32,7 @@ export const blogresolver = {
         }
     },
     Mutation: {
-        addBook: async (_: unknown, { input }: Book) => {
+        addBook: async (_: unknown, { input }: { input: Book }) => {
             console.log(input);
             const { title, author, year } = input
             if (!title || !author || !year) {
